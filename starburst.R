@@ -13,7 +13,7 @@ sb_colors <- c("#ff6600", "#ff6699", "#cc0000", "#ffff00")
 #First, make a stacked bar chart
 sb_stack_bar <- ggplot(data = starburst, aes(x = Ranking, y = Votes, fill = Flavor)) + geom_bar(stat="identity")
 
-sb_stack_bar <- sb_stack_bar + labs(title = "Orginial Starburst Flavor Rankings", y = "Num. of Votes", x = "Ranking (1 is best, 4 is worst)")
+sb_stack_bar <- sb_stack_bar + labs(title = "Orginial Starburst Flavor Popularity", y = "Num. of Votes", x = "Ranking (1 is best, 4 is worst)")
 
 sb_stack_bar <- sb_stack_bar + scale_fill_manual(values=sb_colors)
 
@@ -27,7 +27,7 @@ ggsave("sb_stack_bar.pdf", width = 5, height = 5)
 #Next, make a side by side bar chart
 sb_side_bar <- ggplot(data = starburst, aes(x = Ranking, y = Votes, fill = Flavor)) + geom_bar(stat="identity", position="dodge")
 
-sb_side_bar <- sb_side_bar + labs(title = "Orginial Starburst Flavor Rankings", y = "Num. of Votes", x = "Ranking (1 is best, 4 is worst)")
+sb_side_bar <- sb_side_bar + labs(title = "Orginial Starburst Flavor Popularity", y = "Num. of Votes", x = "Ranking (1 is best, 4 is worst)")
 
 sb_side_bar <- sb_side_bar + scale_fill_manual(values=sb_colors)
 
