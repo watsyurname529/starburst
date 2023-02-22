@@ -24,15 +24,16 @@ sb_stack_bar <- sb_stack_bar + theme(plot.title = element_text(vjust=2))
 sb_stack_bar <- sb_stack_bar + theme(axis.title.x = element_text(vjust=-0.35))
 sb_stack_bar <- sb_stack_bar + theme(axis.title.y = element_text(vjust=0.45))
 
-sb_stack_bar <- sb_stack_bar + geom_text(aes(label = Votes, ymax=0), position=position_stack(width=0.9), vjust=2.5, size=3)
+sb_stack_bar <- sb_stack_bar + geom_text(aes(label = Votes), position=position_stack(vjust=0.5), size=3)
+#sb_stack_bar <- sb_stack_bar + geom_text(aes(label = Votes, ymax=0), vjust=2.5, size=3)
 
 ggsave("sb_stack_bar.png", width = 5, height = 5)
-ggsave("sb_stack_bar.pdf", width = 5, height = 5)
+#ggsave("sb_stack_bar.pdf", width = 5, height = 5)
 
 sb_stack_bar_cb <- sb_stack_bar + scale_fill_manual(values=sb_colors_cb)
 
 ggsave("sb_stack_bar_cb.png", width = 5, height = 5)
-ggsave("sb_stack_bar_cb.pdf", width = 5, height = 5)
+#ggsave("sb_stack_bar_cb.pdf", width = 5, height = 5)
 
 #Next, make a side by side bar chart
 sb_side_bar <- ggplot(data = starburst, aes(x = Ranking, y = Votes, fill = Flavor)) + geom_bar(stat="identity", position="dodge")
@@ -46,12 +47,12 @@ sb_side_bar <- sb_side_bar + theme(plot.title = element_text(vjust=2))
 sb_side_bar <- sb_side_bar + theme(axis.title.x = element_text(vjust=-0.35))
 sb_side_bar <- sb_side_bar + theme(axis.title.y = element_text(vjust=0.45))
 
-sb_side_bar <- sb_side_bar + geom_text(aes(label = Votes, ymax=0), position=position_dodge(width=0.9), vjust=-0.5, size=3)
+sb_side_bar <- sb_side_bar + geom_text(aes(label = Votes, ymax=0), position=position_dodge(width = 0.9), vjust=-0.5, size=3)
 
 ggsave("sb_side_bar.png", width = 5, height = 5)
-ggsave("sb_side_bar.pdf", width = 5, height = 5)
+#ggsave("sb_side_bar.pdf", width = 5, height = 5)
 
 sb_side_bar_cb <- sb_side_bar + scale_fill_manual(values=sb_colors_cb)
 
 ggsave("sb_side_bar_cb.png", width = 5, height = 5)
-ggsave("sb_side_bar_cb.pdf", width = 5, height = 5)
+#ggsave("sb_side_bar_cb.pdf", width = 5, height = 5)
